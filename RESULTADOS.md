@@ -6,35 +6,35 @@
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.45 ms
+⏱ Tiempo: 0.50 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.36 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.40 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -42,21 +42,21 @@
 ## ✅ Query 6: Correcto
 
 ⏱ Tiempo: 0.41 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.71 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,nif, PRIMARY,id_asignatura,id_curso_escolar
+⏱ Tiempo: 0.59 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 1.04 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY, id_profesor,id_grado
+⏱ Tiempo: 0.46 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento, id_profesor,id_grado
 
 ---
 
@@ -72,10 +72,9 @@
 --- 
 +++ 
 @@ -1,13 +1,13 @@
--departamento | apellido1 | apellido2 | nombre
+ departamento | apellido1 | apellido2 | nombre
 -Agronomía | Monahan | Murray | Micaela
 -Economía y Empresa | Fahey | Considine | Antonio
-+nombre | apellido1 | apellido2 | nombre
 +Informática | Ramirez | Gea | Zoe
 +Matemáticas | Schmidt | Fisher | David
  Economía y Empresa | Lemke | Rutherford | Cristina
@@ -94,14 +93,14 @@
 -Química y Física | Stiedemann | Morissette | Alfredo
 ```
 
-⏱ Tiempo: 0.42 ms
+⏱ Tiempo: 0.41 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 11: Correcto
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.36 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -134,14 +133,14 @@
  Schowalter | Muller | Francesca
 ```
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_profesor
 
 ---
 
 ## ✅ Query 14: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_profesor
 
 ---
@@ -158,8 +157,8 @@
  Educación
 ```
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
+⏱ Tiempo: 0.35 ms
+✅ Se usó índice(s) en la consulta: id_departamento, id_profesor
 
 ---
 
