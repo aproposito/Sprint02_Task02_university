@@ -97,22 +97,62 @@ WHERE c.anyo_inicio = '2018' AND c.anyo_fin = '2019';
 
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
-
+select 
+    d.nombre,
+    p.apellido1,
+    p.apellido2,
+	p.nombre
+FROM persona p
+LEFT JOIN profesor pf
+    ON p.id = pf.id_profesor
+LEFT JOIN departamento d
+    ON d.id = pf.id_departamento
+WHERE p.tipo = 'profesor';
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
-
+select 
+    p.apellido1,
+    p.apellido2,
+	p.nombre
+FROM persona p
+LEFT JOIN profesor pf
+    ON p.id = pf.id_profesor
+LEFT JOIN departamento d
+    ON d.id = pf.id_departamento
+WHERE p.tipo ='profesor' AND id_departamento IS NULL;
 
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
-
+select 
+    d.nombre
+FROM departamento d
+LEFT JOIN profesor p
+    ON d.id = p.id_departamento
+WHERE p.id_profesor IS NULL;
 
 -- 13. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
-
+select 
+    p.apellido1,
+    p.apellido2,
+    p.nombre
+FROM persona p
+LEFT JOIN asignatura a
+    ON p.id = a.id_profesor
+WHERE p.tipo = 'profesor' AND a.id IS NULL;
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
-
+SELECT a.id, a.nombre
+FROM asignatura a
+WHERE a.id_profesor IS NULL;
 
 -- 15. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar. (nombre)
-
+SELECT DISTINCT
+	d.nombre
+FROM departamento d
+LEFT JOIN profesor p 
+	ON d.id = p.id_departamento
+LEFT JOIN asignatura a
+	ON a.id_profesor = p.id_profesor 
+WHERE a.id_profesor IS NULL;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
 
