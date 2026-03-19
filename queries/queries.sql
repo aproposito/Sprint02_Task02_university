@@ -98,7 +98,7 @@ WHERE c.anyo_inicio = '2018' AND c.anyo_fin = '2019';
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
 select 
-    d.nombre,
+    d.nombre AS departamento,
     p.apellido1,
     p.apellido2,
 	p.nombre
