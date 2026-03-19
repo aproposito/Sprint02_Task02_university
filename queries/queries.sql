@@ -138,7 +138,7 @@ select
 FROM persona p
 LEFT JOIN asignatura a
     ON p.id = a.id_profesor
-WHERE p.tipo = 'profesor' AND a.id IS NULL
+WHERE p.tipo = 'profesor' AND a.id IS NULL;
 
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
