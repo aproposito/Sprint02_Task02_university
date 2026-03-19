@@ -107,7 +107,8 @@ LEFT JOIN profesor pf
     ON p.id = pf.id_profesor
 LEFT JOIN departamento d
     ON d.id = pf.id_departamento
-WHERE p.tipo = 'profesor';
+WHERE p.tipo = 'profesor'
+ORDER BY d.nombre, p.apellido1, p.apellido2, p.nombre;
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
 select 
@@ -137,7 +138,8 @@ select
 FROM persona p
 LEFT JOIN asignatura a
     ON p.id = a.id_profesor
-WHERE p.tipo = 'profesor' AND a.id IS NULL;
+WHERE p.tipo = 'profesor' AND a.id IS NULL
+	ORDER BY p.apellido1, p.apellido2, p.nombre;
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
 SELECT a.id, a.nombre
@@ -152,7 +154,7 @@ LEFT JOIN profesor p
 	ON d.id = p.id_departamento
 LEFT JOIN asignatura a
 	ON a.id_profesor = p.id_profesor 
-WHERE a.id_profesor IS NULL;
+WHERE a.id IS NULL;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
 
