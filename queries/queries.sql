@@ -139,7 +139,7 @@ FROM persona p
 LEFT JOIN asignatura a
     ON p.id = a.id_profesor
 WHERE p.tipo = 'profesor' AND a.id IS NULL
-	ORDER BY p.apellido1, p.apellido2, p.nombre;
+
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
 SELECT a.id, a.nombre
